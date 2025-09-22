@@ -87,7 +87,7 @@ fn mainfile(cmdlang: &String) {
 using namespace std;
 
 int main(){
-cout << \"hello world\";
+cout << \"hello world\" << endl;
 return 0;
 }";
         let _ = fs::write("src/main.c++", maincontent);
