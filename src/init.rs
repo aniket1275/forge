@@ -12,6 +12,8 @@ fn setupmakefile(cmdlang: &String, projectname: &String) {
     let _ = fs::create_dir("include/");
     let _ = File::create("Makefile");
     let _ = File::create("forge.toml");
+    let _ = File::create(".gitignore");
+    writegitignore();
     if cmdlang == "c++" {
         let _ = File::create("src/main.c++");
     } else {
@@ -101,4 +103,8 @@ int main() {
        ";
         let _ = fs::write("src/main.c", maincontent);
     }
+}
+fn writegitignore() {
+    let content = "/bin";
+    let _ = fs::write(".gitignore", content);
 }

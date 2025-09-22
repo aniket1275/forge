@@ -34,6 +34,7 @@ fn main() {
                 .and_then(|name| name.to_str())
                 .unwrap_or("<unknown>");
             init::setup(lang.to_string(), folder_name.to_string());
+            gitinit();
         }
         Some(Commands::Run {}) => {
             run();
@@ -46,6 +47,7 @@ fn main() {
         }
         Some(Commands::New { lang, project_name }) => {
             new(lang.to_string(), project_name.to_string());
+            gitinit();
         }
         None => {}
     }
@@ -84,4 +86,10 @@ fn new(cmdlang: String, project_name: String) {
     env::set_current_dir(path).expect("Failed to enter project folder");
 
     init::setup(cmdlang, project_name);
+}
+fn gitinit() {
+    let _ = Command::new("git")
+        .arg("init")
+        .status()
+        .expect("Failed to run git init");
 }
