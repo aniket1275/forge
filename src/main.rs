@@ -12,14 +12,14 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     Init {
-        #[arg(short = 'l', long = "lang")]
+        #[arg(short = 'l', long = "lang", default_value = "c")]
         lang: String,
     },
     Run {},
     Build {},
     Clean {},
     New {
-        #[arg(short = 'l', long = "lang")]
+        #[arg(short = 'l', long = "lang", default_value = "c")]
         lang: String,
         project_name: String,
     },
