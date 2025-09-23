@@ -14,16 +14,28 @@ cargo build --release
 ## 🍁 Usage
 
 ```bash
-forge new -l c myproject
+forge new myproject
 ```
 
-- Create new project named myproject
+OR
 
 ```bash
-forge init -l c
+forge new -l c++ myproject
 ```
 
-- Initalize in folder
+- Create new project named myproject for c and cpp
+
+```bash
+forge init
+```
+
+OR
+
+```bash
+forge new -l c++ myproject
+```
+
+- Initalize project for c or cpp
 
 ```bash
 forge run
@@ -44,6 +56,8 @@ forge clean
 - To delete the bin/ folder
 
 ## 🌸 Documentation
+
+You can change the make file build, run and other Phony as you want.
 
 Main files :
 
